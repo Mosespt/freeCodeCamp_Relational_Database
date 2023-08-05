@@ -9,7 +9,7 @@
    - countdown.sh
    - bingo.sh
    - fortune.sh
-   - five.sh
+   - `five.sh`
 
 `five.sh` is the collaboration of all four programs
 
