@@ -57,7 +57,7 @@ do
     INSERT_GAME=$($PSQL "INSERT INTO games(year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES($YEAR, '$ROUND', $WINNER_ID, $OPPONENT_ID, $WINNER_GOALS, $OPPONENT_GOALS)")
     if [[ $INSERT_GAME == "INSERT 0 1" ]]
     then
-      echo Football match added: $YEAR $ROUND $WINNER vs $OPPONENT scores $WINNER_GOALS : $OPPONENT_GOALS
+      echo Football match added: $YEAR $ROUND - $WINNER vs $OPPONENT - scores $WINNER_GOALS : $OPPONENT_GOALS
     fi
 
   fi
