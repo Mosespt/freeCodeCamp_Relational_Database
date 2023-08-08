@@ -4,7 +4,7 @@
 
 PSQL="psql -X --username=freecodecamp --dbname=students --no-align --tuples-only -c"
 
-echo $($PSQL "TRUNCATE students, majors, courses, majors_courses")
+echo $($PSQL "TRUNCATE students, majors, courses, majors_courses RESART IDENTITY CASCADE")
 
 cat courses.csv | while IFS=',' read MAJOR COURSE
 do
