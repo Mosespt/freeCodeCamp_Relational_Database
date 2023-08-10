@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# Make the file executable by typing `'chmod +x ./<file_name>'` in the terminal
+# Make the file executable by typing 'chmod +x ./<file_name>' in the terminal
 
 if [[ $1 == "test" ]]
 then
