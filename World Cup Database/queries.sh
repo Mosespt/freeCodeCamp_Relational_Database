@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# Make the files executable by typing `'chmod +x ./<file_name>'` in the terminal
+# Make the files executable by typing 'chmod +x ./<file_name>' in the terminal
 
 PSQL="psql --username=freecodecamp --dbname=worldcup --no-align --tuples-only -c"
 
