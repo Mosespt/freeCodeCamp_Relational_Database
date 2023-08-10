@@ -1,5 +1,7 @@
 #! /bin/bash
 
+# Make the file executable by typing `'chmod +x ./<file_name>'` in the terminal
+
 if [[ $1 == "test" ]]
 then
   PSQL="psql --username=postgres --dbname=worldcuptest -t --no-align -c"
