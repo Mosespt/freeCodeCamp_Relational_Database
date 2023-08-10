@@ -1,7 +1,5 @@
 #! /bin/bash
 
-# Make the file executable by typing 'chmod +x ./<file_name>' in the terminal
-
 # Bingo Number Generator
 
 echo -e "\n~~ Bingo Number Generator ~~\n"
