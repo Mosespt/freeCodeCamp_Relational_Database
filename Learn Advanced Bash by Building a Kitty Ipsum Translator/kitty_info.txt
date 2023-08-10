@@ -1,0 +1,22 @@
+-> Bash commands: [] <-
+[echo ~~ kitty_ipsum_1.txt info ~~ > kitty_info.txt]
+~~ kitty_ipsum_1.txt info ~~
+
+[echo -e "\nNumber of lines:" >> kitty_info.txt]
+Number of lines:
+[cat kitty_ipsum_1.txt | wc -l >> kitty_info]
+27
+
+[echo -e "\nNumber of words:" >> kitty_info.txt]
+Number of words:
+[cat kitty_ipsum_1.txt | wc -w >> kitty_info]
+332
+
+[echo -e "\nNumber of characters:" >> kitty_info.txt]
+Number of characters:
+[wc -m < kitty_ipsum_1.txt >> kitty_info]
+1738
+
+[echo -e "\nNumber of times meow or meowzer appears:" >> kitty_info.txt]
+Number of times meow or meowzer appears:
+[]
