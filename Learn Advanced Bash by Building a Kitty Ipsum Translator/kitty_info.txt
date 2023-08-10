@@ -19,4 +19,14 @@ Number of characters:
 
 [echo -e "\nNumber of times meow or meowzer appears:" >> kitty_info.txt]
 Number of times meow or meowzer appears:
-[]
+[grep -o 'meow[a-z]*' kitty_ipsum_1.txt | wc -l >> kitty_info.txt]
+7
+
+[echo -e "\nLines that they appear on:" >> kitty_info.txt]
+Lines that they appear on:
+[grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed -E 's/([0-9]+).*/\1/' >> kitty_info.txt]
+1
+4
+10
+22
+23
