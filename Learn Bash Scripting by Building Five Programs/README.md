@@ -8,4 +8,4 @@ Learnt Bash Scripting while creating 5 scripts
 - Last bash (five.sh) file runs the other 4.
 
 
-Make the file executable by typing `'chmod +x ./<file_name>'` in the terminal
+Make the files executable by typing `'chmod +x ./<file_name>'` in the terminal
