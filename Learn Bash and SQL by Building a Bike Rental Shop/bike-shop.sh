@@ -43,8 +43,19 @@ RENT_MENU() {
       MAIN_MENU "That is not a valid bike number."
     else
       # get bike availability
+      BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT AND available=true")
+
       # if not available
-      # send to main menu
+      if [[ -z $BIKE_AVAILABILITY ]]
+      then
+        # send to main menu
+        MAIN_MENU "That bike is not available."
+      else
+        # get customer info
+        # if customer doesn't exist
+        # get new customer name
+        # insert new customer
+      fi
     fi
   fi
 }
