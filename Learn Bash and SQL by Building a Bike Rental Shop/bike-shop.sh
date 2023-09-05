@@ -9,15 +9,22 @@ MAIN_MENU() {
   then
     echo -e "\n$1"
   fi
-  
-  echo How may I help you?
-  # Question 
+
+  echo "How may I help you?" 
   echo -e "\n1. Rent a bike\n2. Return a bike\n3. Exit"
   read MAIN_MENU_SELECTION
+
+  case $MAIN_MENU_SELECTION in
+    1) RENT_MENU ;;
+    2) RETURN_MENU ;;
+    3) EXIT ;;
+    *) MAIN_MENU "Please enter a valid option." ;;
+  esac
 }
+
 RENT_MENU() {
   # get available bikes
-  AVAILABLE_BIKES=$($PSQL "SELECT bike_id, type, size FROM bikes WHERE available=true ORDER BY bike_id")
+  AVAILABLE_BIKES=$($PSQL "SELECT bike_id, type, size FROM bikes WHERE available = true ORDER BY bike_id")
 
   # if no bikes available
   if [[ -z $AVAILABLE_BIKES ]]
@@ -30,7 +37,7 @@ RENT_MENU() {
     echo "$AVAILABLE_BIKES" | while read BIKE_ID BAR TYPE BAR SIZE
     do
       echo "$BIKE_ID) $SIZE\" $TYPE Bike"
-    done 
+    done
 
     # ask for bike to rent
     echo -e "\nWhich one would you like to rent?"
@@ -43,7 +50,7 @@ RENT_MENU() {
       MAIN_MENU "That is not a valid bike number."
     else
       # get bike availability
-      BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT AND available=true")
+      BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id = $BIKE_ID_TO_RENT AND available = true")
 
       # if not available
       if [[ -z $BIKE_AVAILABILITY ]]
@@ -52,25 +59,25 @@ RENT_MENU() {
         MAIN_MENU "That bike is not available."
       else
         # get customer info
+        echo -e "\nWhat's your phone number?"
+
         # if customer doesn't exist
+
         # get new customer name
+
         # insert new customer
+        
       fi
     fi
   fi
 }
+
 RETURN_MENU() {
-  echo Return Menu
+  echo "Return Menu"
 }
+
 EXIT() {
   echo -e "\nThank you for stopping in.\n"
 }
 
 MAIN_MENU
-
-case $MAIN_MENU_SELECTION in
-  1) RENT_MENU ;;
-  2) RETURN_MENU ;;
-  3) EXIT ;;
-  *) MAIN_MENU "Please enter a valid option." ;;
-esac
